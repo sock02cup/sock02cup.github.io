@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呲牙吧 - 奇趣表情包与网络梗图素材库</title>
+    <meta name="description" content="呲牙吧是一个专注于分享热门表情包、网络流行梗图、搞怪图片素材的在线社区。提供高清呲牙表情、趣味表情包下载及生成工具，满足用户日常社交与娱乐需求。">
+    <meta name="keywords" content="呲牙吧,表情包,网络梗图,搞笑图片,素材库,表情制作">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .header-actions button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .header-actions button:hover {
+            background-color: #e84118;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 24px;
+            padding-right: 60px;
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+
+        /* Content Grid */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 180px;
+            background-color: #e1e1e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .card-actions {
+            opacity: 1;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        .action-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #f1f2f6;
+            color: var(--text-main);
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .hot-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f2f6;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-index {
+            background-color: #e1e1e1;
+            color: var(--text-light);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .hot-list li:nth-child(1) .hot-index { background-color: #ff4757; color: white; }
+        .hot-list li:nth-child(2) .hot-index { background-color: #ffa502; color: white; }
+        .hot-list li:nth-child(3) .hot-index { background-color: #3742fa; color: white; }
+
+        .hot-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .tools-grid {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            transition: background 0.3s;
+        }
+
+        .tool-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .tool-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .tool-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e272e;
+            color: #a4b0be;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-actions {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .header-actions button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>😄</span>呲牙吧
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">表情分类</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">生成器</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button>登录 / 注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>发现你的专属搞怪表情</h1>
+            <p>汇聚全网最热门的呲牙表情包、网络梗图与趣味素材，一键下载，轻松分享。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索表情包、搞怪图片或网络热梗...">
+                <button>🔍</button>
+            </div>
+        </section>
+
+        <div class="main-container">
+            <!-- Left Content -->
+            <div class="content-area">
+                
+                <!-- Section 1: Trending -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">🔥 本周热门表情</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="image-grid">
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/emote1/400/300" alt="呲牙表情包1">
+                                <div class="card-actions">
+                                    <div class="action-btn" title="下载">⬇</div>
+                                    <div class="action-btn" title="收藏">♥</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">社畜呲牙.jpg</h3>
+                                <div class="card-meta">
+                                    <span>2.3万次下载</span>
+                                    <span>表情包</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/emote2/400/300" alt="呲牙表情包2">
+                                <div class="card-actions">
+                                    <div class="action-btn" title="下载">⬇</div>
+                                    <div class="action-btn" title="收藏">♥</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">这就很呲牙.png</h3>
+                                <div class="card-meta">
+                                    <span>1.8万次下载</span>
+                                    <span>搞怪</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/emote3/400/300" alt="呲牙表情包3">
+                                <div class="card-actions">
+                                    <div class="action-btn" title="下载">⬇</div>
+                                    <div class="action-btn" title="收藏">♥</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">傲娇呲牙.gif</h3>
+                                <div class="card-meta">
+                                    <span>1.5万次下载</span>
+                                    <span>GIF动图</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/emote4/400/300" alt="呲牙表情包4">
+                                <div class="card-actions">
+                                    <div class="action-btn" title="下载">⬇</div>
+                                    <div class="action-btn" title="收藏">♥</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">这就是你要的.jpg</h3>
+                                <div class="card-meta">
+                                    <span>1.2万次下载</span>
+                                    <span>文字图</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Section 2: Categories -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">📂 表情分类</h2>
+                        <a href="#" class="view-all">浏览全部分类 &rarr;</a>
+                    </div>
+                    <div class="image-grid">
+                        <article class="card" style="padding: 0;">
+                            <div class="card-img-wrapper" style="height: 120px; background-color: #ffcccc;">
+                                <span style="font-size: 2rem; color: #ff4757;">😂</span>
+                            </div>
+                            <div class="card-body" style="text-align: center;">
+                                <h3 class="card-title" style="font-size: 0.9rem;">搞笑搞怪</h3>
+                            </div>
+                        </article>
+                        <article class="card" style="padding: 0;">
+                            <div class="card-img-wrapper" style="height: 120px; background-color: #ccffcc;">
+                                <span style="font-size: 2rem; color: #2ed573;">😏</span>
+                            </div>
+                            <div class="card-body" style="text-align: center;">
+                                <h3 class="card-title" style="font-size: 0.9rem;">傲娇可爱</h3>
+                            </div>
+                        </article>
+                        <article class="card" style="padding: 0;">
+                            <div class="card-img-wrapper" style="height: 120px; background-color: #ccccff;">
+                                <span style="font-size: 2rem; color: #3742fa;">😎</span>
+                            </div>
+                            <div class="card-body" style="text-align: center;">
+                                <h3 class="card-title" style="font-size: 0.9rem;">高冷帅气</h3>
+                            </div>
+                        </article>
+                        <article class="card" style="padding: 0;">
+                            <div class="card-img-wrapper" style="height: 120px; background-color: #ffffcc;">
+                                <span style="font-size: 2rem; color: #ffa502;">🤪</span>
+                            </div>
+                            <div class="card-body" style="text-align: center;">
+                                <h3 class="card-title" style="font-size: 0.9rem;">沙雕无厘头</h3>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Section 3: Meme Wall -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">🖼️ 搞怪梗图墙</h2>
+                    </div>
+                    <div class="image-grid">
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/meme1/400/300" alt="梗图1">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">这就是呲牙.jpg</h3>
+                                <div class="card-meta">
+                                    <span>今日热榜</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/meme2/400/300" alt="梗图2">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">我呲牙.jpg</h3>
+                                <div class="card-meta">
+                                    <span>网友投稿</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/meme3/400/300" alt="梗图3">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">呲牙.jpg</h3>
+                                <div class="card-meta">
+                                    <span>热门推荐</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card-img-wrapper">
+                                <img src="https://picsum.photos/seed/meme4/400/300" alt="梗图4">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">呲牙.jpg</h3>
+                                <div class="card-meta">
+                                    <span>最新上传</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">🏷️ 热门标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">呲牙</a>
+                        <a href="#" class="tag">表情包</a>
+                        <a href="#" class="tag">搞笑</a>
+                        <a href="#" class="tag">沙雕</a>
+                        <a href="#" class="tag">网络热梗</a>
+                        <a href="#" class="tag">搞怪</a>
+                        <a href="#" class="tag">傲娇</a>
+                        <a href="#" class="tag">社畜</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">🔥 热门榜单</h3>
+                    <ul class="hot-list">
+                        <li>
+                            <span class="hot-index">1</span>
+                            <span class="hot-text">这就很呲牙.jpg</span>
+                        </li>
+                        <li>
+                            <span class="hot-index">2</span>
+                            <span class="hot-text">社畜呲牙表情包</span>
+                        </li>
+                        <li>
+                            <span class="hot-index">3</span>
+                            <span class="hot-text">这就是你要的.jpg</span>
+                        </li>
+                        <li>
+                            <span class="hot-index">4</span>
+                            <span class="hot-text">呲牙.jpg</span>
+                        </li>
+                        <li>
+                            <span class="hot-index">5</span>
+                            <span class="hot-text">快乐呲牙.gif</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget" style="background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%); color: white;">
+                    <h3 class="widget-title" style="color: white;">✨ 表情制作神器</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.9rem; opacity: 0.9;">上传你的照片，一键生成专属呲牙表情包。</p>
+                    <button style="width: 100%; padding: 10px; border-radius: 6px; border: none; background: white; color: var(--primary-color); font-weight: bold; cursor: pointer;">立即制作</button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Tools Section -->
+        <section class="tools-section">
+            <h2 style="font-size: 2rem; font-weight: 800;">功能工具</h2>
+            <p style="opacity: 0.8; max-width: 600px; margin: 10px auto;">提供不仅仅是浏览，更有创作与分享的全方位体验。</p>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <span class="tool-icon">🎨</span>
+                    <h3>表情包生成器</h3>
+                    <p>自定义文字、背景与样式，快速制作个性呲牙图。</p>
+                </div>
+                <div class="tool-card">
+                    <span class="tool-icon">🧩</span>
+                    <h3>拼图工具</h3>
+                    <p>将多张表情包拼接成一张大图，适合发朋友圈。</p>
+                </div>
+                <div class="tool-card">
+                    <span class="tool-icon">💾</span>
+                    <h3>批量下载</h3>
+                    <p>一键打包收藏夹中的所有表情包，离线无忧。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <span>😄</span>呲牙吧
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    专注分享高品质表情包与网络热梗，为您的社交生活增添乐趣。每日更新，免费下载。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">表情分类</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">使用指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">投稿通道</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 呲牙吧 版权所有. 仅供展示与学习交流使用。</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
