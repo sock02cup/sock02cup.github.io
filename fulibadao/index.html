@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="福利吧导航 - 专业聚合优质福利资源，提供软件下载、影视娱乐、游戏攻略、实用工具等一站式导航服务，安全、快速、便捷的上网入口。">
+    <meta name="keywords" content="福利吧导航,资源导航,软件下载,影视推荐,游戏攻略,实用工具,在线导航">
+    <title>福利吧导航 - 优质资源聚合与一站式上网服务</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            position: relative;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar {
+                display: block;
+            }
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background-color: var(--bg-color);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+            background-color: var(--card-bg);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 8px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: var(--radius);
+            padding: 40px;
+            color: white;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Grid Layout */
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: #bfdbfe;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #f1f5f9;
+        }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background-color: #eff6ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 12px;
+        }
+
+        .card-stats {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            display: flex;
+            gap: 12px;
+        }
+
+        .visit-btn {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Sidebar */
+        .sidebar-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 900px) {
+            .sidebar-layout {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+        }
+
+        .hot-list a {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .hot-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-index {
+            width: 20px;
+            height: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        .hot-list li:nth-child(1) .hot-index { background-color: #fee2e2; color: #ef4444; }
+        .hot-list li:nth-child(2) .hot-index { background-color: #ffedd5; color: #f97316; }
+        .hot-list li:nth-child(3) .hot-index { background-color: #fef9c3; color: #eab308; }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .tool-item {
+            background-color: var(--bg-color);
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .tool-item:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>福利吧导航</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="搜索资源、软件、游戏...">
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active">首页</a>
+                <a href="#" class="nav-link">软件下载</a>
+                <a href="#" class="nav-link">影视娱乐</a>
+                <a href="#" class="nav-link">游戏攻略</a>
+                <a href="#" class="nav-link">实用工具</a>
+                <a href="#" class="nav-link">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <h1>发现优质资源，畅享数字生活</h1>
+            <p>福利吧导航为您精选全网最实用的软件、影视、游戏及工具资源。告别广告干扰，直达核心内容，安全、高效、便捷。</p>
+            <a href="#" class="hero-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                立即开始探索
+            </a>
+        </section>
+
+        <div class="sidebar-layout">
+            <!-- Main Content Area -->
+            <div class="main-content">
+                
+                <!-- Category: Software -->
+                <section class="category-section">
+                    <div class="section-header">
+                        <h2 class="section-title">精选软件</h2>
+                        <a href="#" class="view-all">查看更多 &rarr;</a>
+                    </div>
+                    <div class="grid-container">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/soft1/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">效率工具</span>
+                                <h3 class="card-title">全能格式转换器 Pro</h3>
+                                <p class="card-desc">支持视频、音频、文档多格式无损转换，界面简洁，速度快，支持批量处理。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>⬇ 12.5w</span>
+                                        <span>★ 4.8</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/soft2/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">系统工具</span>
+                                <h3 class="card-title">深度清理大师</h3>
+                                <p class="card-desc">一键清理系统垃圾、缓存文件，优化开机速度，保护您的隐私安全。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>⬇ 8.2w</span>
+                                        <span>★ 4.6</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/soft3/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">设计素材</span>
+                                <h3 class="card-title">灵感图库素材站</h3>
+                                <p class="card-desc">海量高清免扣素材、矢量图、背景图下载，设计师的必备灵感来源。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>⬇ 5.1w</span>
+                                        <span>★ 4.9</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Category: Entertainment -->
+                <section class="category-section">
+                    <div class="section-header">
+                        <h2 class="section-title">影视娱乐</h2>
+                        <a href="#" class="view-all">查看更多 &rarr;</a>
+                    </div>
+                    <div class="grid-container">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/movie1/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">高清影视</span>
+                                <h3 class="card-title">极速看片网</h3>
+                                <p class="card-desc">提供最新电影、电视剧、动漫的高清在线播放，资源更新快，播放流畅。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>热度 9.8k</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/movie2/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">有声读物</span>
+                                <h3 class="card-title">深夜听书</h3>
+                                <p class="card-desc">收录百万本有声小说、相声评书，支持离线下载，伴您度过闲暇时光。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>热度 7.2k</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/movie3/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">动漫专区</span>
+                                <h3 class="card-title">二次元资源库</h3>
+                                <p class="card-desc">独家收录最新日漫、国漫番剧，高清无码，支持弹幕互动。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>热度 6.5k</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Category: Games -->
+                <section class="category-section">
+                    <div class="section-header">
+                        <h2 class="section-title">游戏攻略</h2>
+                        <a href="#" class="view-all">查看更多 &rarr;</a>
+                    </div>
+                    <div class="grid-container">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/game1/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">热门游戏</span>
+                                <h3 class="card-title">游戏攻略之家</h3>
+                                <p class="card-desc">提供热门网游、手游的最新攻略、副本攻略、装备搭配及活动资讯。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>热度 11w</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/game2/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">单机模拟器</span>
+                                <h3 class="card-title">怀旧游戏厅</h3>
+                                <p class="card-desc">收录FC、SFC、PS1等经典老游戏，在线模拟器畅玩，重温童年回忆。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>热度 8.9k</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/game3/400/250" alt="图片占位" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">棋牌娱乐</span>
+                                <h3 class="card-title">棋牌游戏中心</h3>
+                                <p class="card-desc">汇集斗地主、麻将、德州扑克等多种热门棋牌游戏，无需下载直接玩。</p>
+                                <div class="card-footer">
+                                    <div class="card-stats">
+                                        <span>热度 5.6k</span>
+                                    </div>
+                                    <a href="#" class="visit-btn">立即访问 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">热门排行</h3>
+                    <ul class="hot-list">
+                        <li><a href="#"><span class="hot-index">1</span>最新电影资源</a></li>
+                        <li><a href="#"><span class="hot-index">2</span>PS5 游戏攻略</a></li>
+                        <li><a href="#"><span class="hot-index">3</span>手机剪辑教程</a></li>
+                        <li><a href="#"><span class="hot-index">4</span>免费PDF转换</a></li>
+                        <li><a href="#"><span class="hot-index">5</span>无损音乐下载</a></li>
+                        <li><a href="#"><span class="hot-index">6</span>壁纸高清图库</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">实用工具</h3>
+                    <div class="tool-grid">
+                        <a href="#" class="tool-item">在线翻译</a>
+                        <a href="#" class="tool-item">二维码生成</a>
+                        <a href="#" class="tool-item">图片压缩</a>
+                        <a href="#" class="tool-item">汇率换算</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">温馨提示</h3>
+                    <p style="font-size: 0.9rem; color: #64748b;">
+                        本站所有资源均来源于网络，仅供个人学习交流使用，请于下载后24小时内删除。
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于福利吧导航</h4>
+                <p style="font-size: 0.9rem; line-height: 1.8;">
+                    福利吧导航致力于为用户提供最精准、最便捷的资源搜索服务。我们精选全网优质内容，去除了冗余广告，为您打造清爽的上网环境。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">软件下载</a></li>
+                    <li><a href="#">影视天堂</a></li>
+                    <li><a href="#">游戏攻略</a></li>
+                    <li><a href="#">设计素材</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">
+                    微信公众号
+                </p>
+                <div style="background: #334155; padding: 10px; border-radius: 4px; font-size: 0.8rem; text-align: center;">
+                    <span>福利吧导航</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 福利吧导航 版权所有 | 仅供学习交流使用</p>
+        </div>
+    </footer>
+
+</body>
+                                                                                </html>
