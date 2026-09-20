@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无忧下载 - 安全实用的软件资源与使用指南</title>
+    <meta name="description" content="无忧下载提供最新、安全、无毒的软件下载服务。涵盖电脑软件、手机应用、游戏工具、系统优化及实用工具，提供详细的安装教程与使用指南，解决您的软件下载难题。">
+    <meta name="keywords" content="无忧下载,软件下载,免费软件,实用工具,系统工具,下载中心">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --radius: 8px;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 2rem;
+            position: relative;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar {
+                display: block;
+            }
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            padding-right: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background-color: var(--bg-color);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-color);
+            background-color: #fff;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .cat-item {
+            background: var(--card-bg);
+            padding: 1.5rem 1rem;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .cat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Software Grid */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-card:hover {
+            box-shadow: var(--shadow);
+            border-color: #cbd5e1;
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .app-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .app-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .app-size {
+            background: #f1f5f9;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Safety Notice */
+        .safety-box {
+            background-color: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .safety-icon {
+            font-size: 1.5rem;
+            color: #059669;
+        }
+
+        .safety-content h3 {
+            color: #065f46;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .safety-content p {
+            font-size: 0.9rem;
+            color: #047857;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 3rem 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #f1f5f9;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                无忧<span>下载</span>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="搜索软件、工具、游戏...">
+                <button type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">软件分类</a>
+                <a href="#">热门排行</a>
+                <a href="#">使用指南</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>寻找安全可靠的软件资源</h1>
+            <p>为您精选全网优质软件，承诺无病毒、无广告、无捆绑。一键下载，畅享科技生活。</p>
+            <div class="hero-tags">
+                <span class="tag">系统工具</span>
+                <span class="tag">办公效率</span>
+                <span class="tag">媒体娱乐</span>
+                <span class="tag">设计开发</span>
+                <span class="tag">安全防护</span>
+            </div>
+        </section>
+
+        <!-- Category Grid -->
+        <section>
+            <div class="category-grid">
+                <div class="cat-item">
+                    <span class="cat-icon">💾</span>
+                    <span class="cat-name">系统工具</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">📊</span>
+                    <span class="cat-name">办公软件</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🎮</span>
+                    <span class="cat-name">游戏娱乐</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🛡️</span>
+                    <span class="cat-name">安全防护</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🎨</span>
+                    <span class="cat-name">设计绘图</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">📱</span>
+                    <span class="cat-name">手机工具</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🎵</span>
+                    <span class="cat-name">音频视频</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🔧</span>
+                    <span class="cat-name">实用小工具</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Software -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">本周热门下载</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+
+            <div class="software-grid">
+                <!-- Card 1 -->
+                <article class="app-card">
+                    <div class="card-img-placeholder">🛠️</div>
+                    <div class="card-content">
+                        <h3 class="app-name">极简压缩大师</h3>
+                        <p class="app-desc">支持多种格式的压缩与解压，拥有极快的压缩速度和强大的加密功能，日常办公必备工具。</p>
+                        <div class="app-meta">
+                            <span>更新于: 2023-10-24</span>
+                            <span class="app-size">12.5 MB</span>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="app-card">
+                    <div class="card-img-placeholder">🔒</div>
+                    <div class="card-content">
+                        <h3 class="app-name">极速安全卫士</h3>
+                        <p class="app-desc">实时保护您的电脑安全，清理垃圾文件，优化系统启动项，让电脑运行如飞。</p>
+                        <div class="app-meta">
+                            <span>更新于: 2023-10-23</span>
+                            <span class="app-size">45.2 MB</span>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="app-card">
+                    <div class="card-img-placeholder">📝</div>
+                    <div class="card-content">
+                        <h3 class="app-name">全能笔记本</h3>
+                        <p class="app-desc">支持Markdown编辑，云端同步，支持多端访问，记录灵感与工作的最佳选择。</p>
+                        <div class="app-meta">
+                            <span>更新于: 2023-10-22</span>
+                            <span class="app-size">28.1 MB</span>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="app-card">
+                    <div class="card-img-placeholder">🖼️</div>
+                    <div class="card-content">
+                        <h3 class="app-name">高清图片查看器</h3>
+                        <p class="app-desc">支持RAW格式预览，界面简洁美观，支持快捷键操作，专业摄影师的首选工具。</p>
+                        <div class="app-meta">
+                            <span>更新于: 2023-10-21</span>
+                            <span class="app-size">8.9 MB</span>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Safety Notice -->
+        <section class="safety-box">
+            <div class="safety-icon">✅</div>
+            <div class="safety-content">
+                <h3>安全无忧下载承诺</h3>
+                <p>我们的人工审核团队会对每一款上架软件进行严格扫描，确保所有下载链接均来自官方或可信来源，拦截恶意插件与捆绑软件。</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">下载的软件是免费的吗？</div>
+                <div class="faq-answer">绝大多数软件均提供免费下载和基础功能，部分高级功能可能需要付费订阅或购买授权。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何保证软件的安全性？</div>
+                <div class="faq-answer">我们使用专业杀毒引擎对所有软件进行扫描，并定期更新病毒库，确保您下载的文件安全无毒。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">下载速度慢怎么办？</div>
+                <div class="faq-answer">如果下载速度较慢，可能是由于网络波动或服务器繁忙。建议您避开高峰期下载，或尝试更换下载节点。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">安装过程中出现弹窗怎么办？</div>
+                <div class="faq-answer">请务必仔细阅读安装向导，取消不必要的勾选（如浏览器插件、桌面图标等），选择“自定义安装”以避开捆绑软件。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于无忧下载</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">系统工具</a></li>
+                    <li><a href="#">杀毒软件</a></li>
+                    <li><a href="#">压缩工具</a></li>
+                    <li><a href="#">下载工具</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">软件下载指南</a></li>
+                    <li><a href="#">常见安装问题</a></li>
+                    <li><a href="#">反馈建议</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">获取最新软件资讯</p>
+                <div style="display: flex; gap: 0.5rem;">
+                    <span style="background:#334155; padding: 5px 10px; border-radius:4px; font-size: 0.8rem;">微信公众号</span>
+                    <span style="background:#334155; padding: 5px 10px; border-radius:4px; font-size: 0.8rem;">新浪微博</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 无忧下载. All Rights Reserved. 仅供演示使用，请支持正版软件。</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // 简单的FAQ交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+  </html>
