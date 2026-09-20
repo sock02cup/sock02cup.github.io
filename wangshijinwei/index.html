@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="王室近卫队历史、职责与职能详解。深入了解皇家卫队的选拔标准、历史沿革、制服演变及现代安保作用。">
+    <meta name="keywords" content="王室近卫队, 皇家卫队, 皇家卫兵, 皇宫安保, 皇室卫队历史">
+    <title>王室近卫队-皇家卫队职能与历史沿革专题</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a2b3c;
+            --secondary-color: #8c1a1a;
+            --accent-gold: #c5a059;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #e1e4e8;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            padding-bottom: 5px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+            opacity: 1;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(26, 43, 60, 0.7), rgba(26, 43, 60, 0.5)), url('https://picsum.photos/seed/royalguard/1920/1080') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn Up 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* History Grid */
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .history-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .history-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .history-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .history-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        /* Duties Section */
+        .duties-section {
+            background-color: white;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .duties-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .duties-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .duties-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .duties-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .duty-item {
+            display: flex;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .duty-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(197, 160, 89, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .duty-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .duty-text p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        /* Selection Process */
+        .selection-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .selection-section .section-header h2 {
+            color: white;
+        }
+
+        .selection-section .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            opacity: 0.3;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f3f5;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fafbfc;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            color: var(--light-text);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust based on content */
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 15px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px 0 0 0;
+                width: 100%;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span>◆</span> 王室近卫队
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#history" class="active">历史沿革</a></li>
+                    <li><a href="#duties">核心职能</a></li>
+                    <li><a href="#selection">选拔标准</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>王室近卫队：皇权的守护者</h1>
+            <p>从古至今，王室近卫队始终屹立于皇室安全的最前线。了解其严苛的选拔、辉煌的历史与神圣的职责。</p>
+            <div>
+                <a href="#history" class="btn">探索历史</a>
+                <a href="#duties" class="btn btn-outline">了解职能</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 历史沿革 -->
+        <section id="history" class="section-header">
+            <h2>历史沿革</h2>
+            <p>王室近卫队并非现代产物，而是随着君主专制制度的建立而逐渐形成的精英卫队。</p>
+        </section>
+
+        <div class="history-grid">
+            <article class="history-card">
+                <h3>起源与早期形态</h3>
+                <p>王室近卫队的历史可以追溯到中世纪。最初的近卫军主要由领主或贵族子弟组成，他们不仅负责皇室的日常安保，更是君主意志的直接执行者。在罗马帝国时期，近卫军甚至一度掌握了皇位的废立大权，显示了其极高的战略地位。</p>
+            </article>
+            <article class="history-card">
+                <h3>近代定型</h3>
+                <p>进入近代，随着民族国家的形成，王室近卫队逐渐演变为一种象征性的礼仪部队，同时保留了核心的安保职能。不同国家的近卫队风格各异，例如英国的“掷弹兵卫队”以传统的红衣和熊皮帽著称，而瑞士近卫队则以其独特的蓝色制服闻名于世。</p>
+            </article>
+            <article class="history-card">
+                <h3>现代转型</h3>
+                <p>在现代民主国家，王室近卫队的角色发生了微妙变化。虽然其仪仗职能依然保留，用于展示国家形象和传统，但其实战安保功能已与国家正规军及现代警察体系紧密结合，成为国家礼仪与安全的双重象征。</p>
+            </article>
+        </div>
+
+        <!-- 核心职能 -->
+        <section id="duties" class="duties-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心职能</h2>
+                    <p>王室近卫队的工作远不止于“站岗”，涵盖了从礼仪接待到国家最高级别安保的多重任务。</p>
+                </div>
+                
+                <div class="duties-container">
+                    <div class="duties-image">
+                        <img src="https://picsum.photos/seed/royalguard/600/400" alt="皇家卫队换岗仪式">
+                    </div>
+                    <div class="duties-content">
+                        <div class="duty-item">
+                            <div class="duty-icon">🛡️</div>
+                            <div class="duty-text">
+                                <h4>皇室安保</h4>
+                                <p>负责王室成员在公开场合、私人宅邸及重要外交活动中的安全保卫，制定并执行最高级别的安保方案。</p>
+                            </div>
+                        </div>
+                        <div class="duty-item">
+                            <div class="duty-icon">🏛️</div>
+                            <div class="duty-text">
+                                <h4>仪仗展示</h4>
+                                <p>执行国家元首就职、国葬、阅兵等重大国家级礼仪活动，通过仪式感极强的表演展现国家威仪。</p>
+                            </div>
+                        </div>
+                        <div class="duty-item">
+                            <div class="duty-icon">📜</div>
+                            <div class="duty-text">
+                                <h4>皇室档案</h4>
+                                <p>负责皇室驻地及贵宾接待区的门禁管理、巡逻监控及秩序维护，确保皇家领地的绝对安全。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 选拔标准 -->
+        <section id="selection" class="selection-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>选拔标准</h2>
+                    <p>成为王室近卫队的一员，需要满足极为严苛的身体素质与政治审查。</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">政治背景审查</h3>
+                        <p class="step-desc">申请人必须拥有该国国籍，且无犯罪记录。部分国家的近卫队对申请者的家庭背景有严格限制，以确保忠诚度。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">体能测试</h3>
+                        <p class="step-desc">必须通过高强度的体能考核，包括长跑、障碍跑、射击及负重行军，以适应高强度的安保工作。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">军事技能</h3>
+                        <p class="step-desc">申请人通常需要具备一定的军事基础或接受过专业军事训练，精通武器使用与战术配合。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">04</div>
+                        <h3 class="step-title">形象与气质</h3>
+                        <p class="step-desc">身高、体态、仪容仪表必须符合特定标准，因为近卫队常需代表国家形象进行公开活动。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <h2>常见问题</h2>
+                <p>关于王室近卫队，您可能关心的细节解答。</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">王室近卫队和正规军有什么区别？</div>
+                    <div class="faq-answer">
+                        <p>王室近卫队通常隶属于国家武装力量体系，但主要侧重于皇室内部安保和礼仪展示，编制规模较小。而正规军则承担国家防御、对外战争及大规模社会治安等广泛任务。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">近卫队士兵可以参与实战战斗吗？</div>
+                    <div class="faq-answer">
+                        <p>在现代战争或大规模冲突中，王室近卫队通常会被编入正规军序列参与实战。但在和平时期，其主要任务是执行安保和礼仪任务。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">王室近卫队的制服有什么讲究？</div>
+                    <div class="faq-answer">
+                        <p>制服设计通常融合了历史传统与现代美学。例如，英国近卫队标志性的红色制服和黑色熊皮帽是为了在18世纪战争中从法国士兵中显眼出来。不同国家的制服颜色（如瑞士卫队的蓝色、德国近卫队的黑色）都有其特定的历史渊源。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">普通民众可以报名成为近卫队成员吗？</div>
+                    <div class="faq-answer">
+                        <p>通常情况下，王室近卫队优先从本国现役军人中选拔，或要求申请者具备服役经历。虽然部分国家允许公民直接申请，但竞争极其激烈，且对政治背景有严格限制。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p>本站致力于提供关于王室近卫队的权威历史资料、职能解析及文化科普。内容仅供参考，不构成任何军事建议。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#history">历史沿革</a></li>
+                    <li><a href="#duties">核心职能</a></li>
+                    <li><a href="#selection">选拔标准</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关资源</h4>
+                <ul>
+                    <li><a href="#">各国近卫队历史档案</a></li>
+                    <li><a href="#">皇家安保体系指南</a></li>
+                    <li><a href="#">军事礼仪规范</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 王室近卫队专题网. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentNode;
+                const isActive = parent.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    child.classList.remove('active');
+                });
+
+                // Toggle current
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    document.getElementById('main-nav').classList.remove('active');
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active Link Highlight on Scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav ul li a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
