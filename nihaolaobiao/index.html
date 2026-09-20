@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="你好老表hea - 沉浸式观看乡村爱情喜剧《你好老表》的官方聚合平台。提供高清全集播放、角色介绍、精彩剧情解析及网友互动讨论，重温经典东北乡村生活。">
+    <meta name="keywords" content="你好老表hea,你好老表在线观看,你好老表剧情,东北乡村剧,农村喜剧">
+    <title>你好老表hea - 经典东北乡村喜剧全集在线观看与互动社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #fbc02d;
+            --text-dark: #333;
+            --text-gray: #666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 6px 16px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 200px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-color);
+            margin-left: 16px;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 32px;
+        }
+
+        /* Content Section */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .episode-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .episode-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-thumb {
+            width: 100%;
+            height: 140px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .card-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-gray);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .char-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .char-list li:last-child {
+            border-bottom: none;
+        }
+
+        .char-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+            background-color: #eee;
+        }
+
+        .char-info h4 {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .char-info p {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-box h3 {
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .info-box p {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--white);
+            margin: 40px auto;
+            padding: 40px var(--spacing-unit);
+            max-width: 1200px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 12px;
+            color: var(--text-gray);
+            font-size: 14px;
+            display: none;
+            padding-left: 20px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: #aaa;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+            }
+            nav ul {
+                margin: 16px 0;
+                gap: 16px;
+                font-size: 14px;
+            }
+            .search-bar {
+                display: none;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            你好老表<span>hea</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">全集播放</a></li>
+                <li><a href="#">角色介绍</a></li>
+                <li><a href="#">精彩花絮</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索剧集或角色...">
+            <button style="border:none;background:none;cursor:pointer;">🔍</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>重温东北乡村的淳朴与欢乐</h1>
+        <p>《你好老表》带你走进充满烟火气的乡村生活，感受邻里间的温情与搞笑日常。高清全集在线观看，即刻开启欢乐旅程。</p>
+        <div>
+            <a href="#episodes" class="btn btn-primary">立即观看</a>
+            <a href="#intro" class="btn btn-secondary">了解更多</a>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    <div class="main-content">
+        <!-- Intro Section -->
+        <section id="intro" class="info-grid">
+            <div class="info-box">
+                <h3>📺 剧情简介</h3>
+                <p>《你好老表》是一部聚焦东北乡村生活的喜剧影视作品。故事围绕几位性格迥异的“老表”展开，他们在田间地头、家长里短中演绎了一幕幕令人捧腹又暖心的人间百态。</p>
+                <p>该剧以真实的农村生活为背景，通过幽默诙谐的对话和生动的表演，展现了新时代农民的精神风貌以及城乡之间的文化碰撞。</p>
+            </div>
+            <div class="info-box">
+                <h3>⭐ 观看指南</h3>
+                <p><strong>更新状态：</strong> 全季更新完毕</p>
+                <p><strong>集数数量：</strong> XX集</p>
+                <p><strong>推荐指数：</strong> ★★★★★</p>
+                <p><strong>观看建议：</strong> 建议在Wi-Fi环境下观看，适合全年龄段观众。</p>
+            </div>
+        </section>
+
+        <!-- Episodes Section -->
+        <section id="episodes">
+            <div class="section-title">
+                <span>热门剧集</span>
+                <a href="#" style="font-size:14px;color:var(--primary-color);">查看全部 ></a>
+            </div>
+            <div class="episode-list">
+                <!-- Episode 1 -->
+                <article class="episode-card">
+                    <div class="card-thumb">
+                        <span class="card-badge">HD</span>
+                        <img src="https://picsum.photos/seed/old1/300/200" alt="第1集封面">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">第1集：初来乍到</h3>
+                        <div class="card-meta">
+                            <span>2023-10-01</span>
+                            <span>2,345次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Episode 2 -->
+                <article class="episode-card">
+                    <div class="card-thumb">
+                        <span class="card-badge">HD</span>
+                        <img src="https://picsum.photos/seed/old2/300/200" alt="第2集封面">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">第2集：老表聚会</h3>
+                        <div class="card-meta">
+                            <span>2023-10-02</span>
+                            <span>1,890次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Episode 3 -->
+                <article class="episode-card">
+                    <div class="card-thumb">
+                        <span class="card-badge">HD</span>
+                        <img src="https://picsum.photos/seed/old3/300/200" alt="第3集封面">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">第3集：误会一场</h3>
+                        <div class="card-meta">
+                            <span>2023-10-03</span>
+                            <span>2,100次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Episode 4 -->
+                <article class="episode-card">
+                    <div class="card-thumb">
+                        <span class="card-badge">HD</span>
+                        <img src="https://picsum.photos/seed/old4/300/200" alt="第4集封面">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">第4集：丰收喜悦</h3>
+                        <div class="card-meta">
+                            <span>2023-10-04</span>
+                            <span>1,567次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Episode 5 -->
+                <article class="episode-card">
+                    <div class="card-thumb">
+                        <span class="card-badge">HD</span>
+                        <img src="https://picsum.photos/seed/old5/300/200" alt="第5集封面">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">第5集：邻里纠纷</h3>
+                        <div class="card-meta">
+                            <span>2023-10-05</span>
+                            <span>1,923次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Episode 6 -->
+                <article class="episode-card">
+                    <div class="card-thumb">
+                        <span class="card-badge">HD</span>
+                        <img src="https://picsum.photos/seed/old6/300/200" alt="第6集封面">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">第6集：春节前夕</h3>
+                        <div class="card-meta">
+                            <span>2023-10-06</span>
+                            <span>3,401次播放</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-title">
+                <span>常见问题 (FAQ)</span>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>在哪里可以观看《你好老表》全集？</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    您可以访问本站首页的“全集播放”栏目，所有剧集已按顺序整理完毕，支持高清流畅播放。
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>这部剧适合儿童观看吗？</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    《你好老表》是一部寓教于乐的乡村喜剧，内容健康向上，无暴力色情元素，非常适合全家老小一起观看。
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>如何订阅更新提醒？</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    点击页面右上角的搜索框或注册账号，可以设置关注提醒，新剧集上线时会第一时间通知您。
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <aside>
+        <div class="sidebar-widget">
+            <h3>🎭 主要角色</h3>
+            <ul class="char-list">
+                <li>
+                    <img src="https://picsum.photos/seed/char1/50/50" alt="角色头像" class="char-avatar">
+                    <div class="char-info">
+                        <h4>老李</h4>
+                        <p>本剧主角，性格豪爽，热心肠</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://picsum.photos/seed/char2/50/50" alt="角色头像" class="char-avatar">
+                    <div class="char-info">
+                        <h4>翠花</h4>
+                        <p>村里的开心果，擅长做美食</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://picsum.photos/seed/char3/50/50" alt="角色头像" class="char-avatar">
+                    <div class="char-info">
+                        <h4>二狗</h4>
+                        <p>年轻一代，充满活力</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3>🏷️ 热门标签</h3>
+            <div class="tag-cloud">
+                <a href="#" class="tag">#东北农村</a>
+                <a href="#" class="tag">#家庭伦理</a>
+                <a href="#" class="tag">#爆笑喜剧</a>
+                <a href="#" class="tag">#邻里情</a>
+                <a href="#" class="tag">#乡村生活</a>
+                <a href="#" class="tag">#怀旧经典</a>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3>📅 最新更新</h3>
+            <ul class="char-list">
+                <li>
+                    <div class="char-info">
+                        <h4>第12集：年终总结</h4>
+                        <p style="color:var(--text-gray);font-size:12px;">昨天 20:00</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="char-info">
+                        <h4>第11集：意外惊喜</h4>
+                        <p style="color:var(--text-gray);font-size:12px;">前天 20:00</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="char-info">
+                        <h4>第10集：节日礼物</h4>
+                        <p style="color:var(--text-gray);font-size:12px;">3天前</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于你好老表</h4>
+            <p style="font-size:14px;line-height:1.8;">你好老表hea致力于为用户提供最优质的乡村喜剧观看体验，汇聚全网精彩剧集，还原最真实的东北风情。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">剧集列表</a></li>
+                <li><a href="#">角色图鉴</a></li>
+                <li><a href="#">观看帮助</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>友情链接</h4>
+            <ul>
+                <li><a href="#">影视资讯</a></li>
+                <li><a href="#">搞笑视频</a></li>
+                <li><a href="#">乡村生活</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <ul>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">合作推广</a></li>
+                <li><a href="#">版权声明</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 你好老表hea. All Rights Reserved. 仅供展示使用，非官方网站。</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    function toggleFaq(element) {
+        const wasActive = element.classList.contains('active');
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+            item.querySelector('.faq-question span:last-child').textContent = '+';
+        });
+
+        // Toggle clicked FAQ
+        if (!wasActive) {
+            element.classList.add('active');
+            element.querySelector('.faq-question span:last-child').textContent = '-';
+        }
+    }
+
+    // Smooth Scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+  </html>
