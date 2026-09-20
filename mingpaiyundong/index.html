@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名牌运动鞋-专业潮流鞋履选购指南与品牌评测</title>
+    <meta name="description" content="本站提供全面的名牌运动鞋选购指南，涵盖耐克、阿迪达斯、新百伦等热门品牌。包含尺码对照、材质解析、真假鉴别及搭配建议，助您轻松找到心仪的潮流鞋履。">
+    <meta name="keywords" content="名牌运动鞋, 耐克运动鞋, 阿迪达斯运动鞋, 新百伦, 潮流鞋履, 选购指南">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c90808;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f9f9f9;
+            --bg-white: #ffffff;
+            --border-color: #e5e5e5;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--text-main);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-main);
+            color: var(--bg-white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* Brands Grid */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .brand-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--border-color);
+        }
+
+        .brand-icon {
+            width: 60px;
+            height: 60px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .brand-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Featured Guides */
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .guide-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s;
+        }
+
+        .guide-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .guide-img {
+            height: 200px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .guide-content {
+            padding: 24px;
+        }
+
+        .guide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .guide-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .guide-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .guide-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .guide-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Size Guide Table */
+        .size-section {
+            background-color: var(--bg-white);
+        }
+
+        .size-table-container {
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fafafa;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #fcfcfc;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <a href="#" class="logo">鞋<span>履</span>志</a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#brands">品牌专区</a></li>
+                <li><a href="#guides">选购指南</a></li>
+                <li><a href="#size">尺码对照</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">注册会员</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>探索名牌运动鞋的世界</h1>
+            <p>为您提供专业、客观的鞋履选购参考，从耐克、阿迪达斯到新百伦，助您找到最适合的潮流单品。</p>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="搜索鞋款名称、型号或品牌...">
+                <button class="btn btn-primary">搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Categories -->
+    <section id="brands" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门品牌系列</h2>
+                <p class="section-desc">了解各大顶级运动品牌的经典鞋款与最新科技</p>
+            </div>
+            <div class="brands-grid">
+                <article class="brand-card">
+                    <div class="brand-icon">NIKE</div>
+                    <h3 class="brand-name">耐克</h3>
+                </article>
+                <article class="brand-card">
+                    <div class="brand-icon">ADIDAS</div>
+                    <h3 class="brand-name">阿迪达斯</h3>
+                </article>
+                <article class="brand-card">
+                    <div class="brand-icon">NB</div>
+                    <h3 class="brand-name">新百伦</h3>
+                </article>
+                <article class="brand-card">
+                    <div class="brand-icon">ASICS</div>
+                    <h3 class="brand-name">亚瑟士</h3>
+                </article>
+                <article class="brand-card">
+                    <div class="brand-icon">PUMA</div>
+                    <h3 class="brand-name">彪马</h3>
+                </article>
+                <article class="brand-card">
+                    <div class="brand-icon">REEBOK</div>
+                    <h3 class="brand-name">锐步</h3>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buying Guides -->
+    <section id="guides" class="section" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">深度选购指南</h2>
+                <p class="section-desc">不仅仅是看图片，我们提供专业的参数解析与选购建议</p>
+            </div>
+            <div class="guides-grid">
+                <article class="guide-card">
+                    <img src="https://picsum.photos/seed/nike1/400/300" alt="耐克鞋款评测" class="guide-img">
+                    <div class="guide-content">
+                        <span class="guide-tag">科技解析</span>
+                        <h3 class="guide-title">Nike React 科技：缓震与回弹的完美平衡</h3>
+                        <p class="guide-excerpt">深入解析 Nike React 泡棉材料的物理特性，对比传统 EVA 与 ZoomX，帮助您判断哪款跑鞋更适合您的脚型。</p>
+                        <a href="#" class="guide-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+                <article class="guide-card">
+                    <img src="https://picsum.photos/seed/adidas/400/300" alt="阿迪达斯鞋款评测" class="guide-img">
+                    <div class="guide-content">
+                        <span class="guide-tag">潮流搭配</span>
+                        <h3 class="guide-title">Yeezy 系列与 UltraBoost：如何搭配出街头风格</h3>
+                        <p class="guide-excerpt">从入门级配色到联名款，探讨阿迪达斯鞋履在街头穿搭中的运用技巧，提升您的整体造型质感。</p>
+                        <a href="#" class="guide-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+                <article class="guide-card">
+                    <img src="https://picsum.photos/seed/running/400/300" alt="跑步鞋选购" class="guide-img">
+                    <div class="guide-content">
+                        <span class="guide-tag">选购建议</span>
+                        <h3 class="guide-title">足弓类型与跑鞋选择：扁平足还是高足弓？</h3>
+                        <p class="guide-excerpt">通过简单的测试方法判断您的足弓类型，并推荐相应的支撑系、缓震系或控制系名牌运动鞋。</p>
+                        <a href="#" class="guide-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section id="size" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">通用尺码对照表</h2>
+                <p class="section-desc">国际主流品牌鞋码换算参考，请根据实际情况微调</p>
+            </div>
+            <div class="size-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>中国码 (CN)</th>
+                            <th>欧码 (EUR)</th>
+                            <th>美码 (US Men)</th>
+                            <th>美码 (US Women)</th>
+                            <th>对应脚长 (mm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>38</td>
+                            <td>38</td>
+                            <td>6.5</td>
+                            <td>8</td>
+                            <td>240</td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td>39</td>
+                            <td>7</td>
+                            <td>8.5</td>
+                            <td>245</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>40</td>
+                            <td>7.5</td>
+                            <td>9</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>41</td>
+                            <td>41</td>
+                            <td>8</td>
+                            <td>9.5</td>
+                            <td>255</td>
+                        </tr>
+                        <tr>
+                            <td>42</td>
+                            <td>42</td>
+                            <td>8.5</td>
+                            <td>10</td>
+                            <td>260</td>
+                        </tr>
+                        <tr>
+                            <td>43</td>
+                            <td>43</td>
+                            <td>9</td>
+                            <td>10.5</td>
+                            <td>265</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>44</td>
+                            <td>9.5</td>
+                            <td>11</td>
+                            <td>270</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>45</td>
+                            <td>10</td>
+                            <td>11.5</td>
+                            <td>275</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                            <td>46</td>
+                            <td>10.5</td>
+                            <td>12</td>
+                            <td>280</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666; text-align: center;">
+                *注：不同品牌（如耐克、阿迪达斯）的版型差异可能导致实际穿用尺码不同，建议购买前咨询客服。
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">名牌运动鞋越贵越好吗？</div>
+                    <div class="faq-answer">
+                        <p>不一定。价格通常反映了品牌溢价、材料成本和科技含量，但并不直接等于舒适度。适合您脚型、足弓支撑和运动需求的鞋款才是最好的。建议根据实际用途（跑步、健身、休闲）选择对应的专业鞋款，而非单纯追求高价。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">为什么同一款鞋有的店贵有的店便宜？</div>
+                    <div class="faq-answer">
+                        <p>价格差异可能源于渠道成本、库存积压、促销活动以及是否为正品。购买名牌运动鞋时，请认准官方旗舰店、授权经销商或信誉良好的二手平台，避免因贪图便宜购买到假货或翻新鞋。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">运动鞋应该多久更换一次？</div>
+                    <div class="faq-answer">
+                        <p>一般来说，日常休闲穿着建议每6-12个月检查一次鞋底磨损情况。如果是用于高强度跑步，建议每500-800公里更换一次。当鞋底磨损不均、中底塌陷或支撑结构受损时，即使外观尚新也应停止穿着，以免造成足部损伤。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何辨别耐克或阿迪达斯的真假？</div>
+                    <div class="faq-answer">
+                        <p>辨别真假需要综合外观工艺、材质触感、标签细节、气垫回弹以及包装配件等多方面因素。最稳妥的方法是购买时索要发票和鉴定证书。对于非官方渠道购买的鞋款，建议在收到货后立即检查，并在48小时内申请验货。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <p style="font-size: 0.9rem; line-height: 1.8;">鞋履志致力于为运动爱好者提供最权威的鞋类评测与选购建议。我们专注于帮助用户找到既符合潮流又保护双脚的优质名牌运动鞋。</p>
+            </div>
+            <div class="footer-col">
+                <h3>热门分类</h3>
+                <ul>
+                    <li><a href="#">男子跑鞋</a></li>
+                    <li><a href="#">女子休闲鞋</a></li>
+                    <li><a href="#">篮球鞋</a></li>
+                    <li><a href="#">户外登山鞋</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>帮助中心</h3>
+                <ul>
+                    <li><a href="#">尺码测量方法</a></li>
+                    <li><a href="#">物流配送说明</a></li>
+                    <li><a href="#">退换货政策</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>订阅更新</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">获取最新品牌发售信息与优惠活动。</p>
+                <div style="display: flex;">
+                    <input type="email" placeholder="您的邮箱" style="padding: 8px; border: none; border-radius: 4px 0 0 4px; flex: 1;">
+                    <button style="padding: 8px 12px; background: var(--accent-color); color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer;">订阅</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 鞋履志 - 名牌运动鞋选购指南. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            const isActive = parent.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(child => {
+                child.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                parent.classList.add('active');
+            }
+        });
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+  </html>
