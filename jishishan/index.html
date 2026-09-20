@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>积石山-甘肃积石山县综合资讯与人文旅游门户</title>
+    <meta name="description" content="积石山门户网提供甘肃积石山县最新新闻、自然灾害互助信息、民族风情介绍、大墩峡旅游攻略及积石山保安族民俗文化深度解读。">
+    <meta name="keywords" content="积石山, 积石山县, 甘肃积石山, 大墩峡, 保安族, 积石山地震, 积石山新闻">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5f2d; /* 积石山绿 */
+            --secondary-color: #8fbc8f;
+            --accent-color: #d4a017; /* 民族金 */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部通栏 */
+        .top-bar {
+            background-color: #f1f1f1;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            color: var(--text-light);
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+            margin-left: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-dark);
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            padding: 0.5rem;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 1rem;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/jishishan_hero/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1e421d;
+        }
+
+        /* 核心信息区 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .news-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* 侧边栏 */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .hot-list li {
+            border-bottom: 1px solid #eee;
+            padding: 0.8rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-index {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            background-color: #eee;
+            color: var(--text-dark);
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .hot-list li:nth-child(1) .hot-index { background-color: #ff4d4f; color: white; }
+        .hot-list li:nth-child(2) .hot-index { background-color: #ff7a45; color: white; }
+        .hot-list li:nth-child(3) .hot-index { background-color: #ffa940; color: white; }
+
+        /* 民族风情区 */
+        .culture-section {
+            background-color: #e8f5e9;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .culture-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .culture-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .culture-card h3 {
+            margin: 1rem 0;
+            color: var(--primary-color);
+        }
+
+        /* 旅游区 */
+        .tour-section {
+            margin-bottom: 3rem;
+        }
+
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .tour-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            cursor: pointer;
+            height: 250px;
+        }
+
+        .tour-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .tour-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .tour-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1rem;
+            color: white;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 3rem 0 1rem;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.2rem;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* 移动端简化：隐藏导航，实际项目可做汉堡菜单 */
+            }
+            
+            .hero {
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tour-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .top-bar .container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部信息栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <span>欢迎来到积石山门户网 - 了解积石山，爱上积石山</span>
+            <div class="top-links">
+                <a href="#">关于我们</a> | <a href="#">联系合作</a> | <a href="#">网站地图</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-main">
+            <a href="#" class="logo">
+                积石山 <span>Portal</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">本地新闻</a></li>
+                    <li><a href="#">大墩峡旅游</a></li>
+                    <li><a href="#">民族风情</a></li>
+                    <li><a href="#">便民服务</a></li>
+                    <li><a href="#">乡村风貌</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索积石山资讯...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏大图 -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>山水积石山，多彩保安族</h1>
+            <p>探索黄河上游的璀璨明珠，体验独特的民俗文化与壮美自然风光。</p>
+            <a href="#tour" class="btn">开启探索之旅</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 核心资讯区 -->
+        <section class="info-grid">
+            <!-- 左侧新闻列表 -->
+            <div class="news-list">
+                <div class="section-title">
+                    <h2>最新资讯</h2>
+                </div>
+
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/jishishan_news1/800/400" alt="积石山新闻">
+                    <div class="news-content">
+                        <div class="news-meta">2023-10-24 | 本地新闻</div>
+                        <h3 class="news-title"><a href="#">积石山县举办第X届保安族花儿艺术节</a></h3>
+                        <p class="news-excerpt">近日，积石山县隆重举行了第X届保安族花儿艺术节，来自各地的民间艺人和游客齐聚一堂，共同唱响黄河流域的民族团结之歌，展现了积石山丰富多彩的民族文化底蕴。</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/jishishan_news2/800/400" alt="积石山建设">
+                    <div class="news-content">
+                        <div class="news-meta">2023-10-22 | 基础设施</div>
+                        <h3 class="news-title"><a href="#">积石山县农村公路升级改造工程全面竣工</a></h3>
+                        <p class="news-excerpt">随着最后一段路基的铺通，积石山县农村公路升级改造工程圆满收官。新修的硬化道路连接了全县所有行政村，极大改善了当地群众的出行条件，为乡村振兴注入了强劲动力。</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/jishishan_news3/800/400" alt="积石山生态">
+                    <div class="news-content">
+                        <div class="news-meta">2023-10-20 | 生态环保</div>
+                        <h3 class="news-title"><a href="#">守护黄河安澜：积石山加强生态治理与保护</a></h3>
+                        <p class="news-excerpt">积石山县地处黄河上游，生态地位重要。当地政府持续推进退耕还林、水土保持等生态工程，加大黄河沿岸绿化力度，努力打造绿色生态屏障，确保一江清水向东流。</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 右侧侧边栏 -->
+            <aside>
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <h3>24小时热榜</h3>
+                    </div>
+                    <ul class="hot-list">
+                        <li><a href="#"><span class="hot-index">1</span>大墩峡景区秋季赏秋攻略</a></li>
+                        <li><a href="#"><span class="hot-index">2</span>积石山县特色美食：油炸果子</a></li>
+                        <li><a href="#"><span class="hot-index">3</span>刘集乡万亩苹果喜获丰收</a></li>
+                        <li><a href="#"><span class="hot-index">4</span>积石山县2024年医保缴费通知</a></li>
+                        <li><a href="#"><span class="hot-index">5</span>清水乡古羊皮筏子技艺申遗成功</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <h3>民族特色</h3>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://picsum.photos/seed/ethnic_dress/300/200" alt="保安族服饰" style="width:100%; border-radius:4px;">
+                        <p style="margin-top:10px; font-size:0.9rem; color:#666;">保安族刺绣与服饰是国家级非物质文化遗产，色彩鲜艳，图案精美。</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- 民族文化展示 -->
+        <section class="culture-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>多彩积石山 - 民族文化</h2>
+                </div>
+                <div class="culture-grid">
+                    <div class="culture-card">
+                        <img src="https://picsum.photos/seed/bofang/400/300" alt="保安族风情">
+                        <h3>保安族风情</h3>
+                        <p>保安族主要聚居在积石山保安族东乡族撒拉族自治县，以骁勇善战和能歌善舞著称。</p>
+                    </div>
+                    <div class="culture-card">
+                        <img src="https://picsum.photos/seed/flower/400/300" alt="保安族花儿">
+                        <h3>保安族“花儿”</h3>
+                        <p>保安族“花儿”曲调高亢嘹亮，歌词质朴生动，是国家级非物质文化遗产的重要组成部分。</p>
+                    </div>
+                    <div class="culture-card">
+                        <img src="https://picsum.photos/seed/food/400/300" alt="特色美食">
+                        <h3>酿皮与油香</h3>
+                        <p>独特的饮食文化，酿皮清凉爽口，油香香脆可口，是招待贵客的上等佳肴。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 旅游推荐 -->
+        <section id="tour" class="tour-section">
+            <div class="section-title">
+                <h2>热门旅游景点</h2>
+            </div>
+            <div class="tour-grid">
+                <div class="tour-item">
+                    <img src="https://picsum.photos/seed/dadongxia/400/300" alt="大墩峡">
+                    <div class="tour-overlay">
+                        <h3>大墩峡</h3>
+                        <p>积石山县著名风景名胜区</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <img src="https://picsum.photos/seed/huanghe/400/300" alt="黄河三峡">
+                    <div class="tour-overlay">
+                        <h3>黄河三峡</h3>
+                        <p>黄河在积石山段的壮丽景观</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <img src="https://picsum.photos/seed/haishi/400/300" alt="石海地质公园">
+                    <div class="tour-overlay">
+                        <h3>石海地质公园</h3>
+                        <p>独特的地质地貌奇观</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <img src="https://picsum.photos/seed/mazu/400/300" alt="大禹导河处">
+                    <div class="tour-overlay">
+                        <h3>大禹导河处</h3>
+                        <p>大禹治水传说发生地</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 便民服务提示 -->
+        <section class="sidebar-widget" style="margin-bottom: 3rem; border-left: 5px solid #ff4d4f;">
+            <h3 style="margin-bottom: 1rem; color: #333;">温馨提示</h3>
+            <p style="color: #666; margin-bottom: 0.5rem;">如果您在积石山遇到紧急情况，请及时拨打当地救援电话。</p>
+            <ul style="list-style: disc; padding-left: 1.2rem; color: #666;">
+                <li>医疗急救：120</li>
+                <li>火灾报警：119</li>
+                <li>公安报警：110</li>
+                <li>旅游投诉：12301</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于积石山</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8; color: #bdc3c7;">
+                        积石山门户网致力于打造本地权威信息发布平台，宣传积石山历史文化，展示经济社会发展成就，服务广大网民。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">政府网</a></li>
+                        <li><a href="#">旅游指南</a></li>
+                        <li><a href="#">便民服务</a></li>
+                        <li><a href="#">招商引资</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>地址：甘肃省临夏州积石山县</li>
+                        <li>电话：0930-1234567</li>
+                        <li>邮箱：contact@jishishan.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 积石山门户网 版权所有 | 陇ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
